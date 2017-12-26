@@ -42,7 +42,7 @@ Be sure that your `my_project.cpp` includes...
 
 ```C++
 #include "RaspiVid.h"
-using namespace raspivid
+using namespace raspivid;
 ```
 
 ### LICENSE
