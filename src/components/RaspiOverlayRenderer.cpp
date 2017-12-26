@@ -1,4 +1,4 @@
-#include "components/RaspiOverlayRenderer.h"
+#include "raspivid/components/RaspiOverlayRenderer.h"
 
 namespace raspivid {
     

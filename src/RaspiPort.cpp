@@ -1,4 +1,4 @@
-#include "RaspiPort.h"
+#include "raspivid/RaspiPort.h"
 
 namespace raspivid {
 

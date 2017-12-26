@@ -1,4 +1,4 @@
-#include "components/RaspiEncoder.h"
+#include "raspivid/components/RaspiEncoder.h"
 
 namespace raspivid {
     const char* RaspiEncoder::component_name() {

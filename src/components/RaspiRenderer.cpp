@@ -1,4 +1,4 @@
-#include "components/RaspiRenderer.h"
+#include "raspivid/components/RaspiRenderer.h"
 
 namespace raspivid {
     const char* RaspiRenderer::component_name() {

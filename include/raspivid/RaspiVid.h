@@ -1,51 +1,13 @@
-# `libraspivid`
+#ifndef __RASPIVID_H__
+#define __RASPIVID_H__
 
-### Introduction
-
+/** \mainpage `libraspivid`
+ 
 A collection of C++11 classes that implement Raspberry Pi Camera functionality. Much of the code has been adapted 
 directly from [Raspberry Pi's `raspicam` implementation](https://github.com/raspberrypi/userland/tree/master/host_applications/linux/apps/raspicam)
 with some modifications.
 
-### Features
-
-- C++11 class wrappers for many Raspberry Pi Camera components
-- Automatic component initialization/destruction
-- Callback wrapper class for easy callback implementation
-
-### Usage
-
-The included `CMakeLists.txt` file exports the `raspivid` static library and a `${LIBRASPIVID_INCLUDE_DIRS}` environment variable.
-You can setup a CMake project directory structure like this one:
-
-```
-/project_root
-   CMakeLists.txt
-   /libraspivid
-   /src
-      my_project.cpp   
-```
-
-Your CmakeLists.txt file should appear as follows:
-
-```
-cmake_minimum_required(VERSION 3.1)
-set(CMAKE_CXX_STANDARD 11)
-set(THREADS_PREFER_PTHREAD_FLAG ON)
-project(libraspivid_example_project)
-add_subdirectory(libraspivid)
-include_directories(${LIBRASPIVID_INCLUDE_DIRS})
-add_executable(my_project ./src/my_project.cpp)
-target_link_libraries(my_project raspivid)
-```
-
-Be sure that your `my_project.cpp` includes...
-
-```C++
-#include "raspivid/RaspiVid.h"
-using namespace raspivid;
-```
-
-### LICENSE
+# LICENSE
 
 This code is derived from `raspicam`, and thus retains its original license:
 
@@ -75,4 +37,30 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ```
 
+ */
 
+#include "bcm_host.h"
+#include "interface/vcos/vcos.h"
+
+#include "interface/mmal/mmal.h"
+#include "interface/mmal/mmal_logging.h"
+#include "interface/mmal/mmal_buffer.h"
+#include "interface/mmal/util/mmal_util.h"
+#include "interface/mmal/util/mmal_util_params.h"
+#include "interface/mmal/util/mmal_default_components.h"
+#include "interface/mmal/util/mmal_connection.h"
+#include "interface/mmal/mmal_parameters_camera.h"
+
+#include "raspivid/RaspiPort.h"
+#include "raspivid/RaspiCamControl.h"
+#include "raspivid/RaspiCallback.h"
+#include "raspivid/components/RaspiComponent.h"
+#include "raspivid/components/RaspiCamera.h"
+#include "raspivid/components/RaspiEncoder.h"
+#include "raspivid/components/RaspiNullsink.h"
+#include "raspivid/components/RaspiOverlayRenderer.h"
+#include "raspivid/components/RaspiRenderer.h"
+#include "raspivid/components/RaspiResize.h"
+#include "raspivid/components/RaspiSplitter.h"
+
+#endif /* __RASPIVID_H__ */

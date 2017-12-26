@@ -1,4 +1,4 @@
-#include "components/RaspiSplitter.h"
+#include "raspivid/components/RaspiSplitter.h"
 
 namespace raspivid {
     const char* RaspiSplitter::component_name() {

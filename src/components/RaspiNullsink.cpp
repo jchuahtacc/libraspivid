@@ -1,4 +1,4 @@
-#include "components/RaspiNullsink.h"
+#include "raspivid/components/RaspiNullsink.h"
 
 namespace raspivid {
     const char* RaspiNullsink::component_name() {

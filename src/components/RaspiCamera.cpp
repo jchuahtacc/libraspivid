@@ -1,4 +1,4 @@
-#include "components/RaspiCamera.h"
+#include "raspivid/components/RaspiCamera.h"
 
 namespace raspivid {
     

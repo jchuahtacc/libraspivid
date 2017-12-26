@@ -1,4 +1,4 @@
-#include "components/RaspiResize.h"
+#include "raspivid/components/RaspiResize.h"
 
 namespace raspivid {
     const char* RaspiResize::component_name() {

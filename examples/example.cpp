@@ -1,4 +1,4 @@
-#include "RaspiVid.h"
+#include "raspivid/RaspiVid.h"
 #include <memory>
 
 using namespace std;
